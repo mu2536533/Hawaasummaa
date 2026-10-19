@@ -1,10 +1,10 @@
-import { account } from "@/lib/appwrite";
+import { account,ID } from "@/lib/appwrite";
 
 
 export async function registerUser(email, password, name) {
     try {
         console.log('registering User',email);
-        const User = await account.create(
+        const user = await account.create(
             ID.unique(),
             email,
             password,
@@ -12,7 +12,7 @@ export async function registerUser(email, password, name) {
         );
         console.log("user created succesfully")
         await loginUser(email,password);
-        return{success: true,userId:userAgent.$id}
+        return{success: true,userId: user.$id}
     } catch (error) {
         console.log("registeration error", error||error.message)
         return{
@@ -70,7 +70,7 @@ export async function getCurrentUser() {
     return{
         success:true,
             user: {
-                id: user.id,
+                id: user.$id,
                 email: user.email,
                 name:user.name
         }
