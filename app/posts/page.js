@@ -2,11 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { getCurrentUser } from '@/services/auth';
-import {
-  createPost,
-  getAllPosts,
-  deletePost,
-} from '@/services/database';
+import {createPost,getAllPosts,deletePost,} from '@/services/database';
 
 export default function PostsPage() {
   const [user, setUser] = useState(null);
@@ -279,7 +275,7 @@ const styles = {
     padding: '8px 12px',
     border: 'none',
     borderRadius: '5px',
-    backgroundColor: '#dc2626',
+    backgroundColor: '#cd6969',
     color: '#fff',
     cursor: 'pointer',
   },

@@ -43,17 +43,14 @@ export default function Home() {
             onClick={handleLogOut}
             disabled={loading}
             style={{
-              width: "100%",
-              padding: "10px",
-              backgroundColor: "#0070f3",
-              color: "blue",
-              border: "none",
-              borderRadius: "5px",
               cursor: "pointer",
             }}
           >
             Logout
           </button>
+          <div style={{marginTop: '20px'}}>
+         <a href="/posts" style={{color:'green'}}>view posts</a>
+          </div>
         </div>
       ) : (
         <div>
